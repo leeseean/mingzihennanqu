@@ -1,0 +1,12 @@
+{
+  "name": "ife-mission-1",
+  "version": "1.0.0",
+  "description": "IFE 任务一",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "lite-server":"^2.1.0"
+  }
+}
