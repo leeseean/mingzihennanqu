@@ -116,7 +116,7 @@ tfoot{
     text-indent: 20px;
 }
 .inptitle{
-    width:30%;
+    width:40%;
     text-align: right;
     margin-right: 5px;
 }
@@ -141,6 +141,10 @@ tfoot{
 }
 .inlinediv{
     display: inline-block;
+}
+.aside textarea{
+    width:50%;
+    height: 100px;
 }
 .submitBtn{
     width: 100%;
