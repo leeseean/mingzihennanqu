@@ -1,0 +1,64 @@
+html,body,label,input,a, img,span,h1,h2,h3,h4,h5,h6,div,ul,p{margin:0;padding:0;}
+html,body,input,select{
+    font-family: "微软雅黑","幼圆"Arial, sans-serif;}
+body{
+    padding: 20px;
+}
+.hold{
+    padding:20px;
+    background: #eee;
+    border: 1px solid #999;
+}
+.hold:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+/*common*/
+.left,.center,.right{
+    padding: 20px;
+    border:1px solid #999;
+    background: #FFFFFF;
+}
+img{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+/*left*/
+.left{
+    width: 158px;
+    float: left;
+}
+.teamname{
+    float: right;
+    width: 78px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+/*center*/
+.center{
+    margin-left: 240px;
+    margin-right: 160px
+}
+p{
+    line-height: 25px;
+    text-indent: 30px;
+    font-size: 14px;
+    margin: 10px auto;
+}
+/*right*/
+.right{
+    width: 80px;
+    float: right;
+}
+.right img{
+    margin-bottom:20px;
+}
+.right img:last-child{
+    margin-bottom: 0;
+}
