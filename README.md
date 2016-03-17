@@ -5,6 +5,11 @@
 ### 任务1
 - [代码](./task_1_1/index.html)
 - [说明](./task_1_1/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-1/index.html)
+
+### 任务2
+- [代码](./task_1_2/)
+- [说明](./task_1_2/README.md)
 - [DEMO](http://yanisj.github.io/ife-missions/task-1-2/index.html)
 
 ## 关于本目录中的 index.html
