@@ -3,8 +3,9 @@
 
 ## 代码与说明
 ### 任务1
-- [代码](./task_1_1_1/index.html)
-- [说明](./task_1_1_1/README.md)
+- [代码](./task_1_1/index.html)
+- [说明](./task_1_1/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-2/index.html)
 
 ## 关于本目录中的 index.html
 用来提供到每个任务页面的链接，方便 lite-server 的使用。
