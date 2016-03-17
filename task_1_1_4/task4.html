@@ -2,98 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>task1</title>
+    <title>task4</title>
+    <link rel="stylesheet" href="task4.css">
 </head>
 <body>
-<header>
-    <h1>网站的一级标题</h1>
-    <nav>
+<header class="header">
+    <h1>名字很难起</h1>
+    <nav class="nav nav2">
+        <ul>
+            <li><a href="#">导航</a></li>
+        </ul>
+    </nav>
+    <nav class="nav nav1">
         <ul>
             <li><a href="#">导航链接一</a></li>
             <li><a href="#">导航链接二</a></li>
             <li><a href="#">导航链接三</a></li>
             <li><a href="#">导航链接四</a></li>
-            <li><a href="#">导航链接五</a></li>
         </ul>
     </nav>
 </header>
-<div>
-    <article>
+<div class="page aside">
+    <h2>这里是一个侧栏，侧栏标题</h2>
+    <form>
+        <div>
+            <label class="inptitle inptitleheight" for="email">请输入邮箱地址</label>
+            <div class="inlinediv">
+                <input type="email" name="email" id="email" placeholder="请输入用户名" >
+                <div class="tip">邮箱地址请按要求输入</div>
+            </div>
+        </div>
+        <div>
+            <label class="inptitle inptitleheight" for="psw">请输入密码</label>
+            <input type="password" name="psw" id="pws"  placeholder="请输入密码">
+        </div>
+        <div>
+            <label class="inptitle inptitleheight" for="psw2">请重复输入密码</label>
+            <div class="inlinediv">
+                <input type="password" name="psw2" id="psw2" placeholder="请确认密码" >
+                <div class="tip">密码请为6-16位英文数字</div>
+            </div>
+
+        </div>
+        <div>
+            <div class="inptitle inptitleheight">性别</div>
+            <input type="radio" value="male" name="sex"><span class="inptitleheight">男</span>
+            <input type="radio" value="female" name="sex"><span class="inptitleheight">女</span>
+        </div>
+        <div>
+            <div class="inptitle inptitleheight">城市</div>
+            <select>
+                <option value="bj">北京</option>
+            </select>
+        </div>
+        <div>
+            <div class="inptitle inptitleheight">爱好</div>
+            <input type="checkbox" name="hab" value="0"><span class="inptitleheight">运动</span>
+            <input type="checkbox" name="hab" value="1"><span class="inptitleheight">艺术</span>
+            <input type="checkbox" name="hab" value="2"><span class="inptitleheight">科学</span>
+        </div>
+        <div>
+            <div class="inptitle inptitleheight">个人描述</div>
+            <textarea placeholder="输入个人描述"></textarea>
+        </div>
+
+        <button type="submit" class="submitBtn">确认提交</button>
+    </form>
+</div>
+<div class="content">
+    <article class="page">
         <h2>文章一级标题</h2>
         <h3>文章的二级标题</h3>
-        <p>文章的作者 文章的发表时间</p>
+        <p class="author">文章的作者 文章的发表时间</p>
         <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,换行了。</p>
         <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,<b>这里是粗体字</b>这是一个很长的段落,这是一个很长的段落,<a href="http://ife.baidu.com">这里是一个链接点击后打开新窗口连接到http://ife.baidu.com</a>这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,换行了。</p>
         <img src="../img/01.png" alt="default">
         <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,换行了。</p>
         <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,<b>这里是粗体字</b>这是一个很长的段落,这是一个很长的段落,<a href="http://ife.baidu.com">这里是一个链接点击后打开新窗口连接到http://ife.baidu.com</a>这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,换行了。</p>
     </article>
-    <article>
-        <h2>另一篇文章的一级标题</h2>
+    <article class="page">
+        <h2>文章一级标题</h2>
         <h3>文章的二级标题</h3>
-        <p>文章的作者 文章的发表时间</p>
-        <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,换行了。</p>
-        <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,<b>这里是粗体字</b>这是一个很长的段落,这是一个很长的段落,<a href="http://ife.baidu.com">这里是一个链接点击后打开新窗口连接到http://ife.baidu.com</a>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,换行了。</p>
+        <p class="author">文章的作者 文章的发表时间</p>
+        <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,换行了。</p>
+        <p>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,<b>这里是粗体字</b>这是一个很长的段落,这是一个很长的段落,<a href="http://ife.baidu.com">这里是一个链接点击后打开新窗口连接到http://ife.baidu.com</a>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,换行了。</p>
         <img src="../img/01.png" alt="default">
-        <ul>
+        <ul class="pageul">
             <li>列表项目一</li>
             <li>列表项目一</li>
             <li>列表项目一</li>
         </ul>
     </article>
-    <div>
-        <div>
+    <div class="page">
+        <h2>图片</h2>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
-        <div>
+        <div class="imghold">
             <p>好看的图片</p>
             <img src="../img/01.png" alt="pic1">
         </div>
     </div>
-    <article>
+    <article class="page">
         <h2>最后一篇文章一级标题</h2>
         <h3>文章二级标题</h3>
-        <p>文章作者 文章发表时间</p>
+        <p class="author">文章作者 文章发表时间</p>
         <ol>
             <li>排名1</li>
             <li>排名2</li>
             <li>排名3</li>
         </ol>
         <p>下面是一个表格</p>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>表头</th>
@@ -131,40 +184,8 @@
             </tfoot>
         </table>
     </article>
-    <div>
-        <h2>这里是一个侧栏，侧栏标题</h2>
-        <h3>侧栏注册窗口标题</h3>
-        <form>
-            <div>
-                <label for="email">请输入邮箱地址：</label>
-                <input type="email" name="email" id="email" placeholder="请输入用户名" >
-                <p>邮箱地址请按要求输入</p>
-            </div>
-            <div>
-                <label for="psw">请输入密码：</label>
-                <input type="password" name="psw" id="pws"  placeholder="请输入密码">
-                <label for="psw2">请重复输入密码：</label>
-                <input type="password" name="psw2" id="psw2" placeholder="请确认密码" >
-                <p>密码请为6-16位英文数字</p>
-            </div>
-            性别：
-            <input type="radio" value="male" name="sex">男
-            <input type="radio" value="female" name="sex">女
-            城市：
-            <select>
-                <option value="bj">北京</option>
-            </select>
-            爱好：
-            <input type="checkbox" name="hab" value="0">运动
-            <input type="checkbox" name="hab" value="1">艺术
-            <input type="checkbox" name="hab" value="2">科学
-            个人描述：
-            <textarea placeholder="输入个人描述"></textarea>
-            <button type="submit">确认提交</button>
-        </form>
-    </div>
 </div>
-<footer>
+<footer class="footer">
     <div>版权所有©</div>
 </footer>
 </body>
