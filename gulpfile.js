@@ -1,27 +1,42 @@
-var gulp = require('gulp');
+var gulp     = require('gulp');
 
+var htmlmin  = require('gulp-htmlmin');
+var cleanCSS = require('gulp-clean-css');
 var imagemin = require('gulp-imagemin');
-var del = require('del');
+var del      = require('del');
 
 var paths = {
+  html: '*/*.html',
+  css: '*/*.css',
   images: '*/img/**/*'
-}
+};
+
+var dst_dir = 'public';
 
 gulp.task('clean', function () {
-  return del(['public']);
+  return del([dst_dir]);
+});
+
+
+gulp.task('html', ['clean'], function() {
+  return gulp.src(paths.html)
+    .pipe(htmlmin())
+    .pipe(gulp.dest(dst_dir));
 });
 
 
 gulp.task('css', ['clean'], function () {
-
+  return gulp.src(paths.css)
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(dst_dir));
 });
 
 
 gulp.task('images', ['clean'], function () {
   return gulp.src(paths.images)
     .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest(dst_dir));
 });
 
 
-gulp.task('default', ['images']);
+gulp.task('default', [ 'html', 'css', 'images']);
