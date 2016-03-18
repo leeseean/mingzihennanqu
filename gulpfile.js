@@ -3,6 +3,8 @@ var gulp     = require('gulp');
 var htmlmin  = require('gulp-htmlmin');
 var cleanCSS = require('gulp-clean-css');
 var imagemin = require('gulp-imagemin');
+var watch    = require('gulp-watch');
+var cache    = require('gulp-cache');
 var del      = require('del');
 
 var paths = {
@@ -34,7 +36,7 @@ gulp.task('css', ['clean'], function () {
 
 gulp.task('images', ['clean'], function () {
   return gulp.src(paths.images)
-    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(cache(imagemin({optimizationLevel: 5})))
     .pipe(gulp.dest(dst_dir));
 });
 
