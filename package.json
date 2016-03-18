@@ -6,7 +6,11 @@
     "start": "lite-server"
   },
   "license": "ISC",
-  "dependencies": {
-    "lite-server":"^2.1.0"
+  "devDependencies": {
+    "lite-server":"^2.1.0",
+    "gulp":"^3.9.1",
+    "gulp-clean-css":"^2.0.3",
+    "gulp-imagemin":"^2.4.0",
+    "del":"^2.2.0"
   }
 }
