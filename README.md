@@ -35,3 +35,8 @@
 - [代码](./task_1_13/)
 - [说明](./task_1_13/README.md)
 - [DEMO](http://yanisj.github.io/ife-missions/task-1-13/index.html)
+
+### 任务14
+- [代码](./task_1_14/)
+- [说明](./task_1_14/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-14/index.html)
