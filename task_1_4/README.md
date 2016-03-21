@@ -1,6 +1,6 @@
 #任务四：定位和居中问题
 任务链接：[定位和居中问题](http://ife.baidu.com/task/detail?taskId=4)
-DEMO：[http://yanisj.github.io/ife-missions/task-1-3/index.html](http://yanisj.github.io/ife-missions/task-1-4/index.html)
+DEMO：[http://yanisj.github.io/ife-missions/task-1-4/index.html](http://yanisj.github.io/ife-missions/task-1-4/index.html)
 
 ## 基本介绍
 这次任务中的参考文章：[Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/) 对我影响很大，解决了很多一直存在的疑惑。任务最后呈现的形式，也参考了文章的思路，就算是阅读笔记了。
