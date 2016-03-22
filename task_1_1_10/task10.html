@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task10</title>
+    <link rel="stylesheet" href="task06.css">
+    <style>
+        body{
+            display: flex;
+            padding:20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        body div{
+            width:150px;
+            margin-bottom: 20px;
+            border:1px solid #f00;
+        }
+        body div:nth-child(1){
+            height:120px;
+        }
+        body div:nth-child(2){
+            height:100px;
+        }
+        body div:nth-child(3){
+            height:40px;
+        }
+        body div:nth-child(4){
+            height:200px;
+            border:1px solid #0f0;
+        }
+
+        @media screen and (max-width:640px) {
+            body{
+                flex-flow: row wrap;
+                align-items: flex-start;
+            }
+            body div:nth-child(4){
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
