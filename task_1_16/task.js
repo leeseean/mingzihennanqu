@@ -24,7 +24,7 @@ function addAqiData() {
   var city = $('#aqi-city-input').value,
       num  = $('#aqi-value-input').value;
 
-  if ( !/^[\u4e00-\u9fa5,\w]+$/.exec(city) ) {
+  if ( !/^[A-Za-z\u4e00-\u9fa5]+$/.exec(city) ) {
     alert("城市名称只能使用中英文字符！");
     return;
   } 
@@ -33,7 +33,7 @@ function addAqiData() {
     return;
   }
 
-  aqiData[trim(city)] = parseInt(num);
+  aqiData[city.trim()] = parseInt(num);
 }
 
 /**
@@ -42,14 +42,25 @@ function addAqiData() {
 function renderAqiList() {
   var i;
   var table = $('#aqi-table');
+  table.innerHTML = '';
+  
+  if (isEmptyObj(aqiData)) return;
 
   var temp = '<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>';
 
   for ( i in aqiData ) {
-    temp += '<tr><td>' + i + '</td><td>' + aqiData[i] + '</td><td><button>删除</button></td></tr>' 
+    temp += '<tr><td>' + i + '</td><td>' + aqiData[i] + '</td><td><button data-city=' + i + '>删除</button></td></tr>' 
   }
 
   table.innerHTML = temp;
+}
+
+/**
+ * 判断对象是否为空
+ * 空：true
+ */
+function isEmptyObj ( obj ) {
+  return Object.keys(obj).length ? false : true;
 }
 
 /**
@@ -67,13 +78,12 @@ function addBtnHandle() {
  */
 function delBtnHandle(e) {
   // do sth.
-  var city = e.target.parentElement.parentElement.firstChild.innerHTML;
+  var city = e.target.dataset.city;
   delete aqiData[city];
   renderAqiList();
 }
 
 function init() {
-
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   var addBtn = $('#add-btn');
   addBtn.addEventListener('click', addBtnHandle);
