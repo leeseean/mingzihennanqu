@@ -5,11 +5,15 @@ var cleanCSS = require('gulp-clean-css');
 var imagemin = require('gulp-imagemin');
 var watch    = require('gulp-watch');
 var cache    = require('gulp-cache');
+var jshint   = require('gulp-jshint');
+var uglyfly  = require('gulp-uglyfly');
+var rename   = require('gulp-rename');
 var del      = require('del');
 
 var paths = {
   html: '*/*.html',
   css: '*/*.css',
+  js: 'task_*/*.js',
   images: '*/img/**/*'
 };
 
@@ -20,9 +24,8 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('html', ['clean'], function() {
+gulp.task('html', ['clean'], function () {
   return gulp.src(paths.html)
-    .pipe(htmlmin())
     .pipe(gulp.dest(dst_dir));
 });
 
@@ -34,6 +37,16 @@ gulp.task('css', ['clean'], function () {
 });
 
 
+gulp.task('js', ['clean'], function () {
+  return gulp.src(paths.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(uglyfly())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(dst_dir));
+});
+
+
 gulp.task('images', ['clean'], function () {
   return gulp.src(paths.images)
     .pipe(cache(imagemin({optimizationLevel: 5})))
@@ -41,4 +54,4 @@ gulp.task('images', ['clean'], function () {
 });
 
 
-gulp.task('default', [ 'html', 'css', 'images']);
+gulp.task('default', [ 'html', 'css', 'js', 'images']);
