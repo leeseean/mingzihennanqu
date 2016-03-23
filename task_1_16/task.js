@@ -49,7 +49,9 @@ function renderAqiList() {
   var temp = '<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>';
 
   for ( i in aqiData ) {
-    temp += '<tr><td>' + i + '</td><td>' + aqiData[i] + '</td><td><button data-city=' + i + '>删除</button></td></tr>';
+    if ( aqiData.hasOwnProperty(i) ) {
+      temp += '<tr><td>' + i + '</td><td>' + aqiData[i] + '</td><td><button data-city=' + i + '>删除</button></td></tr>';
+    }
   }
 
   table.innerHTML = temp;
