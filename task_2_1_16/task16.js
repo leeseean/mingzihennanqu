@@ -65,9 +65,7 @@ function delBtnHandle(e) {
 function init() {
 
     // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
-    document.getElementById('add-btn').onclick=function(){
-        addBtnHandle();
-    }
+    document.getElementById('add-btn').onclick=addBtnHandle;
 
     // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
     addEvent(document.getElementById('aqi-table'),'click',delBtnHandle)
