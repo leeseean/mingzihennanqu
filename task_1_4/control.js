@@ -19,16 +19,16 @@
     el.addEventListener('click', function () {
       buttons.forEach(function(el) {
         el.setAttribute('class', '');
-      })
+      });
       el.setAttribute('class', 'active');
 
       codes.forEach(function (el) {
         el.style.display = 'none';
-      })
+      });
       codes[index].style.display = 'block';
 
-      container.setAttribute('class', classes[index]['container']);
-      center.setAttribute('class', classes[index]['center']);
-    })
+      container.setAttribute('class', classes[index].container);
+      center.setAttribute('class', classes[index].center);
+    });
   });
-})()
+})();
