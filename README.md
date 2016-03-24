@@ -40,3 +40,18 @@
 - [代码](./task_1_14/)
 - [说明](./task_1_14/README.md)
 - [DEMO](http://yanisj.github.io/ife-missions/task-1-14/index.html)
+
+### 任务15
+- [代码](./task_1_15/)
+- [说明](./task_1_15/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-15/index.html)
+
+### 任务16
+- [代码](./task_1_16/)
+- [说明](./task_1_16/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-16/index.html)
+
+### 任务17
+- [代码](./task_1_17/)
+- [说明](./task_1_17/README.md)
+- [DEMO](http://yanisj.github.io/ife-missions/task-1-17/task.html)

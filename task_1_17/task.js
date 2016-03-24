@@ -86,7 +86,7 @@ function getDateStr(dat) {
 function randomBuildData(seed) {
   var returnData = {};
   var dat = new Date("2016-01-01");
-  var datStr = ''
+  var datStr = '';
   for (var i = 1; i < 92; i++) {
     datStr = getDateStr(dat);
     returnData[datStr] = Math.ceil(Math.random() * seed);
@@ -114,7 +114,7 @@ var chartData = {};
 var pageState = {
   nowSelectCity: 0,
   nowGraTime: "day"
-}
+};
 
 /**
  * 渲染图表
@@ -235,7 +235,7 @@ function initCitySelector() {
 
   cities.forEach(function (el, index) {
     options += '<option value='+ index +'>' + el + '</option>';
-  })
+  });
 
   select.innerHTML = options;
   // 给select设置事件，当选项发生变化时调用函数citySelectChange
@@ -316,7 +316,7 @@ function initAqiChartData() {
  * 初始化函数
  */
 function init() {
-  initGraTimeForm()
+  initGraTimeForm();
   initCitySelector();
   initAqiChartData();
 }
