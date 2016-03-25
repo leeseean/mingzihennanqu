@@ -1,0 +1,90 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+img{ border: 0 none; }
+ol,ul,li { list-style: none; }
+/*.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }*/
+/*.clearfix{overflow:auto;_height:1%}*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+html { font-size: 125%; font-family: "微软雅黑"; max-width: 768px; margin: 0 auto; }
+
+
+
+/*header start*/
+header { position: relative; height: 2.5rem; line-height: 2.5rem; background-color: #91d4da; color: #fff; }
+header h1 { font-size: 1rem; text-align: center; }
+.back { font-size: .8rem; position: absolute; left: .5rem; }
+/*header end*/
+
+/*nav start*/
+nav ul{ display: flex; height: 1.8rem; line-height: 1.8rem; text-align: center; }
+.nav-item { flex: 1; border-bottom: .2rem solid #fff; font-size: .8rem; }
+nav .active { border-bottom: .2rem solid #90d6d8; }
+/*nav end*/
+
+.banner img { width: 100%; height: auto;}
+
+/*tag-list start*/
+.tag-list { display: flex; text-align: center; margin: 1rem .5rem; border-bottom: 1px solid #aaa; }
+.tag { flex: 1; }
+.tag-icon { width: 2rem; height: 2rem; line-height: 1.6rem; background-color: #00c7d6; margin: 0 auto; border: 1px solid #00c7d6; border-radius: 1rem; }
+.tag-icon i { font-size: 1.4rem; display: block; color: #fff; }
+.tag-name { font-size: .7rem; margin: .5rem 0 .8rem; }
+/*tag-list end*/
+
+/*section-list start*/
+.section-list { display: flex; margin: .5rem; text-align: center; }
+.section { flex: 1; }
+.section + .section { border-left: 1px solid #ccc; }
+.section-title { font-size: .9rem; }
+.section-sub-title { font-size: .7rem; color: #555; }
+.section img { width: 50%; height: auto; }
+.section-3 img { width: 78%; height: auto; }
+/*section-list end*/
+
+/*module start*/
+.module { background-color: #ddd; padding-top: 1rem; }
+.wrapper { background-color: #fff; padding: .6rem .6rem 0; }
+.module h2 { font-size: 1.2rem; padding-bottom: .6rem; border-bottom: 1px solid #ddd; background-color: #fff; }
+.module-item { background-color: #fff; padding-top: 1rem;  display: flex; }
+.left { flex: 1; }
+.left img { width: 100%; border: 1px solid #feb832; }
+.right { flex: 2; }
+.doc { font-size: .6rem; background-color: #eee; float: right; width: 45%; margin-left: 5%; height: 2rem; line-height: 2rem; margin-bottom: .5rem; text-align: center; }
+/*module end*/
+
+/*article start*/
+.article { background-color: #ddd; padding-top: .5rem; }
+.article .wrapper { padding-bottom: .5rem; }
+.wrapper + .wrapper { margin-top: .1rem; }
+.article img { width: 40%; display: block; float: left; padding-right: .5rem; }
+.title { font-size: .6rem; height: 3.4rem; }
+.time { font-size: .5rem; color: #555; }
+.title-b { font-size: .6rem; margin-bottom: .5rem; }
+.img-box { display: flex; }
+.img-box div { flex: 1; }
+.img-box div + div { margin-left: .1rem; }
+.img-box img { width: 100%; }
+
+
+/*article end*/
+
+
+
+
+
+
+
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

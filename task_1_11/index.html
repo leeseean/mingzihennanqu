@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="yes" name="apple-touch-fullscreen">
+	<title>task_1_11</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<script>
+	window.onload = function(){
+		function screenSizeSetting(){
+	        document.querySelector('html').style.fontSize = document.body.clientWidth *125/320 + "%";
+	    }
+	    screenSizeSetting();
+	    window.onresize = screenSizeSetting;
+	}
+	</script>
+	<header>
+		<div class="back">
+			<i class="icon iconfont">&#xf0292;</i>返回
+		</div>
+		<h1>这是标题</h1>
+	</header>
+	<nav>
+		<ul>
+			<li class="nav-item">导航</li>
+			<li class="nav-item active">导航</li>
+			<li class="nav-item">导航</li>
+			<li class="nav-item">导航</li>
+			<li class="nav-item">导航</li>
+		</ul>
+	</nav>
+	<div class="banner">
+		<img src="img/banner.png" alt="banner">
+	</div>
+	<div class="tag-list">
+		<div class="tag">
+			<div class="tag-icon"><i class="icon iconfont">&#xe6de;</i></div>
+			<div class="tag-name">标签</div>
+		</div>
+		<div class="tag">
+			<div class="tag-icon"><i class="icon iconfont">&#xe6de;</i></div>
+			<div class="tag-name">标签</div>
+		</div>
+		<div class="tag">
+			<div class="tag-icon"><i class="icon iconfont">&#xe6de;</i></div>
+			<div class="tag-name">标签</div>
+		</div>
+		<div class="tag">
+			<div class="tag-icon"><i class="icon iconfont">&#xe6de;</i></div>
+			<div class="tag-name">标签</div>
+		</div>
+		<div class="tag">
+			<div class="tag-icon"><i class="icon iconfont">&#xe6de;</i></div>
+			<div class="tag-name">标签</div>
+		</div>
+	</div>
+	<div class="section-list">
+		<div class="section">
+			<img src="img/section-l.png" alt="section">
+			<h2 class="section-title">分栏一</h2>
+			<div class="section-sub-title">分栏小标题</div>
+		</div>
+		<div class="section">
+			<img src="img/section-m.png" alt="section">
+			<h2 class="section-title">分栏二</h2>
+			<div class="section-sub-title">分栏小标题</div>
+		</div>
+		<div class="section section-3">
+			<img src="img/section-r.png" alt="section">
+			<h2 class="section-title">分栏三</h2>
+			<div class="section-sub-title">分栏小标题</div>
+		</div>
+	</div>
+	<div class="module">
+		<div class="wrapper">
+			<h2>模块一</h2>
+			<div class="module-item">
+				<div class="left">
+					<img src="img/module.png" alt="module">
+				</div>
+				<div class="right">
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+				</div>
+			</div>
+			<div class="module-item">
+				<div class="left">
+					<img src="img/module.png" alt="module">
+				</div>
+				<div class="right">
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+					<div class="doc">这是文案</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="module">
+			<div class="wrapper">
+				<h2>模块二</h2>
+				<div class="module-item">
+					<div class="left">
+						<img src="img/module.png" alt="module">
+					</div>
+					<div class="right">
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+					</div>
+				</div>
+				<div class="module-item">
+					<div class="left">
+						<img src="img/module.png" alt="module">
+					</div>
+					<div class="right">
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+						<div class="doc">这是文案</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="article">
+		<div class="wrapper clearfix">
+			<img src="img/article-top.png" alt="article">
+			<h2 class="title">文章标题</h2>
+			<div class="span time">文章来源 6分钟前</div>
+		</div>
+		<div class="wrapper clearfix">
+			<img src="img/article-top.png" alt="article">
+			<h2 class="title">文章标题</h2>
+			<div class="span time">文章来源 6分钟前</div>
+		</div>
+		<div class="wrapper">
+			<h2 class="title-b">文章标题</h2>
+			<div class="img-box">
+				<div><img src="img/article-bottom.png" alt="article"></div>
+				<div><img src="img/article-bottom.png" alt="article"></div>
+				<div><img src="img/article-bottom.png" alt="article"></div>
+			</div>
+			<p class="time">文章来源 7分钟前</p>
+		</div>
+	</div>
+</body>
+</html>
