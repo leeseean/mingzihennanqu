@@ -1,0 +1,12 @@
+#queue-wrap {
+  margin-top: 10px;
+}
+
+#queue-wrap span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 3px;
+
+  color: #fff;
+  background-color: red;
+}
