@@ -26,9 +26,7 @@ function getType ( variable ) {
  */
 function css ( element, cssName, value ) {
   if ( !element.nodeType ) return null;
-
   var isFn;
-
   if ( getType( cssName ) === 'object' ) {
     for ( var key in cssName ) {
       if ( cssName.hasOwnProperty(key) ){
@@ -37,18 +35,15 @@ function css ( element, cssName, value ) {
     }
     return;
   }
-
   if (value) {
     if (getType( value ) === "function") {
       isFn = true;
     }
-
     element.style[cssName] = isFn ? value(element, css(element, cssName)) : value;
   } else {
     if ( element.currentStyle ) {
       return element.currentStyle[cssName];
     }
-    
     else {
       return getComputedStyle(element)[cssName];
     }
@@ -190,10 +185,7 @@ function graTimeChange( e ) {
   if( e.target.tagName.toLowerCase() === 'input' ) {   // 防止点击 label 时触发两次事件
   // 确定是否选项发生了变化 
     value = e.target.value;
-
-    if ( pageState.nowGraTime === value ) {
-      return;
-    }
+    if ( pageState.nowGraTime === value ) return;
   // 设置对应数据
     pageState.nowGraTime = value;
     chartData = setAqiChartData();
@@ -213,8 +205,7 @@ function citySelectChange(e) {
   pageState.nowSelectCity = value;
   chartData = setAqiChartData();
   // 调用图表渲染函数
-  renderChart();
-  
+  renderChart();  
 }
 
 /**
@@ -232,14 +223,10 @@ function initCitySelector() {
   var options = '',
       select = $('#city-select'),
       cities = Object.keys(aqiSourceData);
-
-  cities.forEach(function (el, index) {
-    options += '<option value='+ index +'>' + el + '</option>';
-  });
-
-  select.innerHTML = options;
+  select.innerHTML = cities.map(function (el, index) {
+    return '<option value='+ index +'>' + el + '</option>';
+  }).join('');
   // 给select设置事件，当选项发生变化时调用函数citySelectChange
-
   select.addEventListener('change', citySelectChange);
 }
 
@@ -257,38 +244,45 @@ function setAqiChartData() {
   function _formatByTime( data ) {
     var result = {},
         keys = Object.keys(data),
-        sum,
-        dataOfUnit,
         dayOfUnit,
         days;
-    
-    function process (unit) {
-        dayOfUnit.forEach(function (el,index) {
-          dataOfUnit = keys.splice(0, el);
-          sum = 0;
-
-          dataOfUnit.forEach(function (el,index) {
-            sum += data[el];
-          });
-
-          result[(index+1)+unit] = Math.floor(sum/el);
+    /**
+     * process
+     * 利用 dayOfUnit 数组整理出需要的数据格式
+     *    week: dayOfUnit 应为 [3,7,7,...,7,4]
+     *    month: dayOfUnit 应为 [31,29,31]
+     */
+    function process () {
+      var timeName = {
+        week: '周',
+        month: '月'
+      };
+      var sum;
+      dayOfUnit.forEach(function (el,index) {
+        sum = keys.splice(0,el).map(function (el) {
+          return data[el];
+        }).reduce(function (previous,current) {
+          return previous + current;
         });
+
+        result[(index+1)+timeName[pageState.nowGraTime]] = Math.floor(sum/el);
+      });
     }
     
     switch (pageState.nowGraTime) {
       case 'week':
         // 组织数组 dayOfUnit = [3,7,7,...,7,4]
         dayOfUnit = [3];
-        var days = keys.length - 3;
+        days = keys.length - 3;
         dayOfUnit.length = Math.ceil(days/7);
         dayOfUnit.fill(7,1).push(days%7);
         
-        process('周');
+        process();
         break;
 
       case 'month':
         dayOfUnit = [31,29,31];
-        process('月');
+        process();
         break;
       
       default:
