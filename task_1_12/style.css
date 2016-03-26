@@ -1,0 +1,21 @@
+table { font-family: "微软雅黑"; text-align: left; margin-bottom: 50px; }
+thead { background: #333; color: #fff; }
+tbody tr:nth-child(even) { background-color: #ccc; }
+tbody tr:nth-child(1),tbody tr:nth-child(2),tbody tr:nth-child(3) { color: #f00 }
+
+input { width: 100px; transition: all 1s; outline: none; }
+input:focus { width: 300px; }
+
+.banner-box { position: relative; width: 300px; height: 200px; overflow: hidden; margin-top: 50px; border: 2px solid #000; }
+.banner { transition: left 1s; position: absolute;  width: 900px; height: 200px; padding: 0; margin: 0; left: 0; }
+.banner-item { width: 300px; height: 200px; list-style: none; float: left; }
+.banner-item:first-child { background-color: #f00; }
+.banner-item:nth-child(2) { background-color: #0f0; }
+.banner-item:last-child { background-color: #00f; }
+.ctrl { position: absolute; height: 20px; list-style: none; bottom: 0; right: 0; margin: 0; padding: 0; }
+.banner-ctrl { width: 20px; height: 20px; float: left; margin-left: 10px; background-color: #bbb; }
+.banner-ctrl a { width: 20px; height: 20px; display: inline-block; color: #000; text-decoration: none; text-align: center; line-height: 20px; }
+
+#banner-2:target .banner { left: -300px; }
+#banner-3:target .banner { left: -600px; }
+
