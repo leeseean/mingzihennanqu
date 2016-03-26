@@ -256,38 +256,39 @@ function setAqiChartData() {
   // 按时间单位整理数据
   function _formatByTime( data ) {
     var result = {},
-        i,
-        j,
-        len,
-        sum,
-        dataOfMonth,
         keys = Object.keys(data),
-        dayOfMonth = [31,29,31];
+        sum,
+        dataOfUnit,
+        dayOfUnit,
+        days;
     
-    switch (pageState.nowGraTime) {
-      case 'week':
-        len = Math.ceil(keys.length / 7);
-        for (i=0; i<len; i++) {
-          sum = 0;
-          for (j=i*7; j<(i+1)*7; j++) {
-            sum += data[keys[j]];
-          }
-          result['week'+(i+1)] = Math.floor(sum/7);
-        }
-        break;
-
-      case 'month':
-        dayOfMonth.forEach(function (el,index) {
-          dataOfMonth = keys.splice(0, el);
+    function process (unit) {
+        dayOfUnit.forEach(function (el,index) {
+          dataOfUnit = keys.splice(0, el);
           sum = 0;
 
-          dataOfMonth.forEach(function (el,index) {
+          dataOfUnit.forEach(function (el,index) {
             sum += data[el];
           });
 
-          result[(index+1)+'月'] = Math.floor(sum/el);
+          result[(index+1)+unit] = Math.floor(sum/el);
         });
+    }
+    
+    switch (pageState.nowGraTime) {
+      case 'week':
+        // 组织数组 dayOfUnit = [3,7,7,...,7,4]
+        dayOfUnit = [3];
+        var days = keys.length - 3;
+        dayOfUnit.length = Math.ceil(days/7);
+        dayOfUnit.fill(7,1).push(days%7);
         
+        process('周');
+        break;
+
+      case 'month':
+        dayOfUnit = [31,29,31];
+        process('月');
         break;
       
       default:
@@ -297,8 +298,9 @@ function setAqiChartData() {
     return result;
   }
 
+
   var data = aqiSourceData[_getCity()];
-  data = _formatByTime(data);
+  data = data&&_formatByTime(data);
 
   return data || {};
 }
