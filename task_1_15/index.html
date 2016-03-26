@@ -56,7 +56,7 @@ function getData() {
   */
 
   var data = [];
-  var list = Array.prototype.slice.call(document.querySelectorAll('#source li'));
+  var list = Array.from(document.querySelectorAll('#source li'));
 
   list.forEach(function ( el, index ) {
     var unit = [];
