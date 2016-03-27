@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task_2_18</title>
+	<style>
+	.resault span { height: 30px; padding: 10px; background-color: #f00; display: inline-block; margin: 10px; color: #fff; line-height: 30px; }
+	</style>
+</head>
+<body>
+	<div id="ctrl">
+		<input type="text" id="input">
+		<button id="left-in">左侧入</button>
+		<button id="right-in">右侧入</button>
+		<button id="left-out">左侧出</button>
+		<button id="right-out">右侧出</button>
+		<span id="input-error" style="visibility: hidden;">请输入数字</span>
+	</div>
+	<div class="resault"></div>
+	<script>
+	(function(){
+		//验证输入是否为数字
+		function validate(input){
+			var numReg = new RegExp("^[0-9]+$");
+			return numReg.test(input);
+		}
+		//创建元素
+		function create(value){
+			var elem = document.createElement("span");
+			elem.innerHTML = value;
+			elem.className = "item";
+			return elem;
+		}
+		document.onclick = function(e){
+			var resault = document.querySelector(".resault");
+			if(e.target.id === "left-out"){
+				if(resault.innerHTML === ""){
+					alert("容器已为空");
+					return;
+				}
+				var elem = resault.childNodes[0]
+				resault.removeChild(elem);
+				alert(elem.innerHTML);
+			}
+			if(e.target.id === "right-out"){
+				if(resault.innerHTML === ""){
+					alert("容器已为空");
+					return;
+				}
+				var elem = resault.childNodes[resault.childNodes.length-1]
+				resault.removeChild(elem);
+				alert(elem.innerHTML);
+			}
+			if (e.target.className === "item") {
+				resault.removeChild(e.target)
+			}
+			//验证输入
+			if(e.target.tagName === "BUTTON"){
+				if(!validate(document.getElementById('input').value)){
+					document.getElementById("input-error").style.visibility = "visible";
+					return;
+				}
+				document.getElementById("input-error").style.visibility = "hidden";
+			}
+			if(e.target.id === "left-in"){
+				resault.insertBefore(create(document.getElementById('input').value),resault.firstChild);
+
+			}
+			if(e.target.id === "right-in"){
+				resault.appendChild(create(document.getElementById('input').value));
+			}
+		}
+	})()
+	</script>
+</body>
+</html>
