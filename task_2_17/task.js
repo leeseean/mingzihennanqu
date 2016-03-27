@@ -65,8 +65,11 @@ function renderChart(city,graTime) {
   aqiChartWrap.innerHTML = inner;
   var dataBar = document.querySelectorAll(".data-bar");
   for (var i = 0; i < dataBar.length; i++) {
+    (function(i){
+      dataBar[i].style.backgroundColor = "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")";
+      dataBar[i].parentNode.style.zIndex = 10;
+    })(i)
     dataBar[i].onmouseover = function(){
-      this.parentNode.style.zIndex = 10;
       this.nextSibling.style.bottom = this.offsetHeight + 20 + "px";
       this.nextSibling.style.display = "block";
       this.onmouseout = function(){
