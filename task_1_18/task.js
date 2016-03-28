@@ -30,7 +30,7 @@ function queueHandler (e) {
   if (type === 'unshift' || type === 'push') {
     input = $('input').value.trim();
     if ( !/^\d+$/.exec(input) ) {
-      alert("请输入阿拉伯数字！");
+      alert("输入无效，请输入阿拉伯数字！");
       return;
     }
     queueData[type](parseInt(input));
