@@ -10,6 +10,8 @@ var uglyfly  = require('gulp-uglyfly');
 var rename   = require('gulp-rename');
 var del      = require('del');
 
+var browserSync = require('browser-sync').create();
+
 var paths = {
   html: '*/*.html',
   css: '*/*.css',
@@ -39,11 +41,17 @@ gulp.task('css', ['clean'], function () {
 
 gulp.task('js', ['clean'], function () {
   return gulp.src(paths.js)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
     .pipe(uglyfly())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(dst_dir));
+});
+
+
+
+gulp.task('lint', function () {
+  return gulp.src(paths.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 
@@ -51,6 +59,20 @@ gulp.task('images', ['clean'], function () {
   return gulp.src(paths.images)
     .pipe(cache(imagemin({optimizationLevel: 5})))
     .pipe(gulp.dest(dst_dir));
+});
+
+gulp.task('browser-sync', function () {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  });
+
+  gulp.watch(paths.js, ['lint']);
+
+  gulp.watch('task_*/**/*', function(){
+    browserSync.reload();
+  });
 });
 
 
